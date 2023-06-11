@@ -46,7 +46,7 @@ class _FazersPageState extends State<FazersPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('dont blow ur hibachi'),
+        title: const Text('dont blow ur hibachi'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
