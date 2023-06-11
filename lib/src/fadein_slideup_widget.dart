@@ -55,7 +55,7 @@ class _FadeInSlideUpWidgetState extends State<FadeInSlideUpWidget>
 
   @override
   Widget build(BuildContext context) {
-    // startAnimation();
+    startAnimation();
 
     return FadeTransition(
       opacity: _fadeAnimation,
