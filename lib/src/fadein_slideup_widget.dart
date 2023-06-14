@@ -3,11 +3,19 @@ import 'package:flutter/material.dart';
 class FadeInSlideUpWidget extends StatefulWidget {
   final Widget child;
   final Duration duration;
+  final double fadeAnimationBegin;
+  final double fadeAnimationEnd;
+  final Offset sildeAnimationBegin;
+  final Offset slideAnimationEnd;
 
   const FadeInSlideUpWidget({
     Key? key,
     required this.child,
     this.duration = const Duration(milliseconds: 500),
+    this.fadeAnimationBegin = 0.0,
+    this.fadeAnimationEnd = 1.0,
+    this.sildeAnimationBegin = const Offset(0.0, 1.0),
+    this.slideAnimationEnd = Offset.zero,
   }) : super(key: key);
 
   @override
@@ -29,13 +37,13 @@ class _FadeInSlideUpWidgetState extends State<FadeInSlideUpWidget>
       duration: widget.duration,
     );
 
-    // TODO(zimvo): make tween editable
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
+    _fadeAnimation = Tween<double>(
+            begin: widget.fadeAnimationBegin, end: widget.fadeAnimationEnd)
+        .animate(_controller);
 
     _slideAnimation = Tween<Offset>(
-      // TODO(zimvo): make offset editable
-      begin: const Offset(0.0, 1.0),
-      end: Offset.zero,
+      begin: widget.sildeAnimationBegin,
+      end: widget.slideAnimationEnd,
     ).animate(CurvedAnimation(
       parent: _controller,
       curve: Curves.easeOut,
