@@ -5,7 +5,7 @@ class FadeInSlideUpWidget extends StatefulWidget {
   final Duration duration;
   final double fadeAnimationBegin;
   final double fadeAnimationEnd;
-  final Offset sildeAnimationBegin;
+  final Offset slideAnimationBegin;
   final Offset slideAnimationEnd;
 
   const FadeInSlideUpWidget({
@@ -14,7 +14,7 @@ class FadeInSlideUpWidget extends StatefulWidget {
     this.duration = const Duration(milliseconds: 500),
     this.fadeAnimationBegin = 0.0,
     this.fadeAnimationEnd = 1.0,
-    this.sildeAnimationBegin = const Offset(0.0, 1.0),
+    this.slideAnimationBegin = const Offset(0.0, 1.0),
     this.slideAnimationEnd = Offset.zero,
   }) : super(key: key);
 
@@ -42,7 +42,7 @@ class _FadeInSlideUpWidgetState extends State<FadeInSlideUpWidget>
         .animate(_controller);
 
     _slideAnimation = Tween<Offset>(
-      begin: widget.sildeAnimationBegin,
+      begin: widget.slideAnimationBegin,
       end: widget.slideAnimationEnd,
     ).animate(CurvedAnimation(
       parent: _controller,
