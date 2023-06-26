@@ -1,3 +1,3 @@
-## 0.0.1
+# 0.0.1
 
-* TODO: Describe initial release.
+Slideup from the bottom animation for text or any widget. Same effect as CashApp

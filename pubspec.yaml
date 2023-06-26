@@ -1,7 +1,7 @@
 name: hibachi
 description: dont blow your hibachi
 version: 0.0.1
-homepage:
+homepage: https://github.com/ZimvoMatwa/hibachi
 
 environment:
   sdk: '>=2.19.0 <3.0.0'
